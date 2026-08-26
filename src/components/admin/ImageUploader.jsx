@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react'
 
-const CLOUDINARY_CLOUD_NAME = 'ch-instalaciones'
+const CLOUDINARY_CLOUD_NAME = 'td7em3xq'
 const CLOUDINARY_UPLOAD_PRESET = 'ch_proyectos'
 
 const MAX_SIZE = 5 * 1024 * 1024
