@@ -12,7 +12,9 @@ import AdminLogin from './components/admin/AdminLogin'
 import AdminProjects from './components/admin/AdminProjects'
 import AdminCarousel from './components/admin/AdminCarousel'
 
-const isAdminRoute = window.location.hash.startsWith('#admin')
+const isAdminRoute =
+  window.location.hash.startsWith('#admin') ||
+  window.location.pathname.startsWith('/admin')
 
 function App() {
   const [user, setUser] = useState(undefined)
