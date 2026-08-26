@@ -76,17 +76,12 @@ export default function Carousel() {
               Electricistas certificados
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
-              {slide?.title || 'Instalaciones eléctricas seguras y confiables'}
+              Instalaciones eléctricas seguras y confiables
             </h1>
-            {slide?.subtitle && (
-              <p className="mt-4 text-lg text-slate-300">{slide.subtitle}</p>
-            )}
-            {!slide?.subtitle && (
-              <p className="mt-6 text-lg text-slate-300">
-                En CH Instalaciones Eléctricas ofrecemos soluciones para hogares,
-                comercios e industrias. Calidad, seguridad y cumplimiento normativo.
-              </p>
-            )}
+            <p className="mt-6 text-lg text-slate-300">
+              En CH Instalaciones Eléctricas ofrecemos soluciones para hogares,
+              comercios e industrias. Calidad, seguridad y cumplimiento normativo.
+            </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
                 href="#contacto"
