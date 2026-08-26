@@ -1,21 +1,30 @@
 import { useRef, useState } from 'react'
-import { ref, uploadBytesResumable, getDownloadURL, deleteObject } from 'firebase/storage'
-import { storage } from '../../firebase'
+
+const CLOUDINARY_CLOUD_NAME = 'ch-instalaciones'
+const CLOUDINARY_UPLOAD_PRESET = 'ch_proyectos'
 
 const MAX_SIZE = 5 * 1024 * 1024
 const ALLOWED = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
 
-async function uploadToStorage(file, folder = 'projects') {
+async function uploadToCloudinary(file, folder = 'proyectos') {
   if (!ALLOWED.includes(file.type)) throw new Error('Formato no permitido (JPG, PNG, WEBP o GIF)')
   if (file.size > MAX_SIZE) throw new Error('La imagen no puede superar los 5 MB')
-  const ext = file.name.split('.').pop() || 'jpg'
-  const path = `${folder}/${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`
-  const storageRef = ref(storage, path)
-  await uploadBytesResumable(storageRef, file)
-  return getDownloadURL(storageRef)
+
+  const fd = new FormData()
+  fd.append('file', file)
+  fd.append('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+  fd.append('folder', folder)
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+    { method: 'POST', body: fd }
+  )
+  const data = await res.json()
+  if (!res.ok) throw new Error(data.error?.message || 'Error al subir imagen')
+  return data.secure_url
 }
 
-/** Single image — drag & drop or click → Firebase Storage → returns URL */
+/** Single image — drag & drop o clic → Cloudinary → devuelve URL */
 export function ImageUploader({ value, onChange, label, hint, previewHeight = 'h-36' }) {
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState('')
@@ -25,7 +34,7 @@ export function ImageUploader({ value, onChange, label, hint, previewHeight = 'h
     setUploading(true)
     setError('')
     try {
-      const url = await uploadToStorage(file)
+      const url = await uploadToCloudinary(file)
       onChange(url)
     } catch (e) {
       setError(e.message)
@@ -90,7 +99,7 @@ export function ImageUploader({ value, onChange, label, hint, previewHeight = 'h
   )
 }
 
-/** Multi-image — thumbnails with remove buttons */
+/** Multi-image — thumbnails con botón de eliminar */
 export function MultiImageUploader({ value, onChange, label, max = 8 }) {
   const [uploading, setUploading] = useState(false)
   const [error, setError] = useState('')
@@ -102,7 +111,7 @@ export function MultiImageUploader({ value, onChange, label, max = 8 }) {
     const uploaded = []
     try {
       for (const file of Array.from(files)) {
-        const url = await uploadToStorage(file)
+        const url = await uploadToCloudinary(file)
         uploaded.push(url)
       }
       onChange([...value, ...uploaded].slice(0, max))
@@ -174,7 +183,6 @@ function Spinner() {
     </svg>
   )
 }
-
 function UploadIcon() {
   return (
     <svg className="h-5 w-5 text-slate-400" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -182,7 +190,6 @@ function UploadIcon() {
     </svg>
   )
 }
-
 function ImageIcon() {
   return (
     <svg className="h-8 w-8 opacity-40 text-slate-400" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
@@ -190,7 +197,6 @@ function ImageIcon() {
     </svg>
   )
 }
-
 function XIcon({ className = '' }) {
   return (
     <svg className={`h-4 w-4 ${className}`} fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
