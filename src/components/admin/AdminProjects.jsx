@@ -73,7 +73,7 @@ export default function AdminProjects() {
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="/"
+              href="/#"
               className="rounded-md border border-slate-700 px-3 py-1.5 text-xs text-slate-400 hover:border-slate-500 hover:text-white transition-colors"
             >
               Ver sitio →

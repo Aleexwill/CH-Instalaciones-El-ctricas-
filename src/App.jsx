@@ -11,7 +11,7 @@ import Footer from './components/Footer'
 import AdminLogin from './components/admin/AdminLogin'
 import AdminProjects from './components/admin/AdminProjects'
 
-const isAdminRoute = window.location.pathname.startsWith('/admin')
+const isAdminRoute = window.location.hash.startsWith('#admin')
 
 function App() {
   const [user, setUser] = useState(undefined) // undefined = loading

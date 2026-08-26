@@ -72,7 +72,7 @@ export default function AdminLogin() {
         </form>
 
         <p className="mt-4 text-center text-xs text-slate-600">
-          <a href="/" className="hover:text-slate-400 transition-colors">← Volver al sitio</a>
+          <a href="/#" className="hover:text-slate-400 transition-colors">← Volver al sitio</a>
         </p>
       </div>
     </div>
