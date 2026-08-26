@@ -31,10 +31,6 @@ export default function Carousel() {
 
   useEffect(() => { setCurrent(0) }, [slides.length])
 
-  if (loading) {
-    return <div className="relative h-[90vh] min-h-[600px] bg-slate-950 animate-pulse" />
-  }
-
   const slide = activeSlides[current]
 
   return (
@@ -44,7 +40,10 @@ export default function Carousel() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Slides */}
+      {/* Fondo base siempre visible para evitar parpadeo */}
+      <div className="absolute inset-0 bg-slate-950" />
+
+      {/* Slides — se montan cuando llegan las imágenes */}
       <div className="absolute inset-0">
         {activeSlides.map((s, i) => (
           <div
