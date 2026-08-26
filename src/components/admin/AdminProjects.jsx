@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { signOut } from 'firebase/auth'
-import { auth } from '../../firebase'
 import { useProjects } from '../../hooks/useProjects'
 import { ImageUploader, MultiImageUploader } from './ImageUploader'
 
@@ -58,37 +56,7 @@ export default function AdminProjects() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white">
-      {/* Header */}
-      <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/95 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 h-16">
-          <div className="flex items-center gap-3">
-            <span className="inline-flex h-8 w-8 items-center justify-center rounded bg-amber-400 text-slate-950 font-bold text-sm">
-              ⚡
-            </span>
-            <div>
-              <div className="text-sm font-semibold text-white">Panel Admin</div>
-              <div className="text-xs text-slate-500">Proyectos</div>
-            </div>
-          </div>
-          <div className="flex items-center gap-3">
-            <a
-              href="/#"
-              className="rounded-md border border-slate-700 px-3 py-1.5 text-xs text-slate-400 hover:border-slate-500 hover:text-white transition-colors"
-            >
-              Ver sitio →
-            </a>
-            <button
-              onClick={() => signOut(auth)}
-              className="rounded-md px-3 py-1.5 text-xs text-slate-500 hover:text-white transition-colors"
-            >
-              Salir
-            </button>
-          </div>
-        </div>
-      </header>
-
-      <main className="mx-auto max-w-6xl px-6 py-8">
+    <div className="px-6 py-8">
         {/* Page title */}
         <div className="mb-6 flex items-center justify-between">
           <div>
@@ -211,8 +179,6 @@ export default function AdminProjects() {
             ))}
           </div>
         )}
-      </main>
-
       {/* Modal */}
       {editing && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
