@@ -21,7 +21,8 @@ async function uploadToCloudinary(file, folder = 'proyectos') {
   )
   const data = await res.json()
   if (!res.ok) throw new Error(data.error?.message || 'Error al subir imagen')
-  return data.secure_url
+  // Insertar transformaciones: formato automático (WebP/AVIF), calidad optimizada, ancho máximo
+  return data.secure_url.replace('/upload/', '/upload/f_auto,q_auto:good,w_1400/')
 }
 
 /** Single image — drag & drop o clic → Cloudinary → devuelve URL */

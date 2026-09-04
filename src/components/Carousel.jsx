@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useCarousel } from '../hooks/useCarousel'
 
 const FALLBACK_SLIDES = [
@@ -13,10 +13,24 @@ const FALLBACK_SLIDES = [
 
 const INTERVAL = 5000
 
+function useReducedMotion() {
+  const [reduced, setReduced] = useState(
+    () => window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  )
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const handler = (e) => setReduced(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+  return reduced
+}
+
 export default function Carousel() {
   const { slides, loading } = useCarousel({ onlyActive: true })
   const [current, setCurrent] = useState(0)
   const [paused, setPaused] = useState(false)
+  const reducedMotion = useReducedMotion()
 
   const activeSlides = slides.length > 0 ? slides : FALLBACK_SLIDES
 
@@ -24,10 +38,10 @@ export default function Carousel() {
   const prev = () => setCurrent((c) => (c - 1 + activeSlides.length) % activeSlides.length)
 
   useEffect(() => {
-    if (paused || activeSlides.length <= 1) return
+    if (paused || reducedMotion || activeSlides.length <= 1) return
     const t = setInterval(next, INTERVAL)
     return () => clearInterval(t)
-  }, [next, paused, activeSlides.length])
+  }, [next, paused, reducedMotion, activeSlides.length])
 
   useEffect(() => { setCurrent(0) }, [slides.length])
 
@@ -55,6 +69,8 @@ export default function Carousel() {
                 src={s.image}
                 alt={s.title || ''}
                 className="h-full w-full object-cover"
+                loading={i === 0 ? 'eager' : 'lazy'}
+                fetchPriority={i === 0 ? 'high' : 'low'}
               />
             ) : (
               <div className={`h-full w-full bg-gradient-to-br ${s.gradient || 'from-slate-900 to-slate-950'}`} />
@@ -129,16 +145,23 @@ export default function Carousel() {
         </>
       )}
 
-      {/* Dots */}
+      {/* Dots — área táctil 44px, punto visual pequeño */}
       {activeSlides.length > 1 && (
-        <div className="absolute bottom-6 left-1/2 z-30 flex -translate-x-1/2 gap-2">
+        <div className="absolute bottom-4 left-1/2 z-30 flex -translate-x-1/2">
           {activeSlides.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrent(i)}
-              className={`rounded-full transition-all ${i === current ? 'w-6 h-2 bg-amber-400' : 'w-2 h-2 bg-white/40 hover:bg-white/70'}`}
+              className="flex h-11 w-11 items-center justify-center"
               aria-label={`Slide ${i + 1}`}
-            />
+              aria-current={i === current ? 'true' : undefined}
+            >
+              <span
+                className={`block rounded-full transition-all duration-300 ${
+                  i === current ? 'w-6 h-2 bg-amber-400' : 'w-2 h-2 bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            </button>
           ))}
         </div>
       )}
