@@ -16,7 +16,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800">
       <nav className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
         <a href="#top" className="flex items-center" aria-label="CH Instalaciones Eléctricas - Inicio">
-          <Logo className="h-10 w-auto" size="nav" />
+          <Logo />
         </a>
 
         <ul className="hidden md:flex items-center gap-8 text-sm text-slate-300">
