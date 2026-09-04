@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Logo from './Logo'
 
 const LINKS = [
   { href: '#servicios', label: 'Servicios' },
@@ -14,11 +15,8 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-slate-950/95 backdrop-blur border-b border-slate-800">
       <nav className="mx-auto max-w-6xl px-6 flex items-center justify-between h-16">
-        <a href="#top" className="flex items-center gap-2 text-white font-bold text-lg">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded bg-amber-400 text-slate-950">
-            ⚡
-          </span>
-          CH Instalaciones Eléctricas
+        <a href="#top" className="flex items-center" aria-label="CH Instalaciones Eléctricas - Inicio">
+          <Logo className="h-10 w-auto" size="nav" />
         </a>
 
         <ul className="hidden md:flex items-center gap-8 text-sm text-slate-300">
