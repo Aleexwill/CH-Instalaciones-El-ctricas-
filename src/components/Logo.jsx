@@ -1,89 +1,67 @@
-export default function Logo({ className = '', size = 'nav' }) {
-  const sizes = {
-    nav:   { letters: 38, sub: 9.5,  gap: 4, bolt: 22, boltY: 2 },
-    lg:    { letters: 64, sub: 15,   gap: 6, bolt: 36, boltY: 4 },
-    hero:  { letters: 96, sub: 22,   gap: 8, bolt: 54, boltY: 6 },
-  }
-  const s = sizes[size] || sizes.nav
-  const lh = s.letters * 0.85
-  const total = s.letters * 2 + s.bolt + s.gap * 2
-  const viewH = lh + s.sub + 6
-
+/**
+ * CH Instalaciones logo mark — rendered with HTML so Barlow Condensed
+ * (already loaded in <head>) applies correctly. Font-size on the wrapper
+ * drives every proportion via em units.
+ *
+ * Usage in navbar:  <Logo />
+ * Usage large:      <Logo style={{ fontSize: '3rem' }} />
+ */
+export default function Logo({ className = '', style = {} }) {
   return (
-    <svg
-      viewBox={`0 0 ${total} ${viewH}`}
-      aria-label="CH Instalaciones"
+    <div
       className={className}
-      style={{ display: 'block', overflow: 'visible' }}
+      style={{
+        display: 'inline-flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        lineHeight: 1,
+        userSelect: 'none',
+        fontSize: '1.75rem',   // base — override via style prop for other sizes
+        ...style,
+      }}
+      aria-label="CH Instalaciones"
     >
-      <defs>
-        <style>{`@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,800&display=swap');`}</style>
-      </defs>
+      {/* Lettermark: C ⚡ H */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.01em' }}>
+        <span style={letterStyle}>C</span>
 
-      {/* C */}
-      <text
-        x="0"
-        y={lh}
-        fontFamily="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
-        fontSize={s.letters}
-        fontWeight="800"
-        fontStyle="italic"
-        fill="white"
-        dominantBaseline="auto"
-      >
-        C
-      </text>
+        {/* Lightning bolt — proportional to parent font-size */}
+        <svg
+          viewBox="0 0 10 18"
+          aria-hidden="true"
+          style={{ height: '0.82em', width: 'auto', flexShrink: 0, display: 'block', margin: '0 0.03em' }}
+        >
+          <polygon
+            points="8,0 2.5,8.5 6,8.5 1.5,18 10,9.5 6,9.5 9.5,0"
+            fill="#FBBF24"
+          />
+        </svg>
 
-      {/* Lightning bolt */}
-      <g transform={`translate(${s.letters + s.gap}, ${s.boltY})`}>
-        <LightningBolt size={s.bolt} />
-      </g>
+        <span style={letterStyle}>H</span>
+      </div>
 
-      {/* H */}
-      <text
-        x={s.letters + s.gap + s.bolt + s.gap}
-        y={lh}
-        fontFamily="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
-        fontSize={s.letters}
-        fontWeight="800"
-        fontStyle="italic"
-        fill="white"
-        dominantBaseline="auto"
-      >
-        H
-      </text>
-
-      {/* INSTALACIONES */}
-      <text
-        x={total / 2}
-        y={viewH}
-        fontFamily="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
-        fontSize={s.sub}
-        fontWeight="700"
-        fill="white"
-        textAnchor="middle"
-        letterSpacing={s.sub * 0.22}
-        dominantBaseline="auto"
-      >
-        INSTALACIONES
-      </text>
-    </svg>
+      {/* Wordmark */}
+      <span style={wordmarkStyle}>INSTALACIONES</span>
+    </div>
   )
 }
 
-function LightningBolt({ size }) {
-  // Proportional lightning bolt matching the logo
-  const w = size * 0.62
-  const h = size
-  // Points: top-right angled down to mid, then to bottom-left
-  const pts = [
-    [w * 0.62, 0],
-    [w * 0.18, h * 0.44],
-    [w * 0.50, h * 0.44],
-    [w * 0.00, h],
-    [w * 0.82, h * 0.56],
-    [w * 0.50, h * 0.56],
-  ].map((p) => p.join(',')).join(' ')
+const letterStyle = {
+  fontFamily: "'Barlow Condensed', 'Arial Narrow', Arial, sans-serif",
+  fontWeight: 800,
+  fontStyle: 'italic',
+  color: 'white',
+  fontSize: '1em',
+  lineHeight: 1,
+}
 
-  return <polygon points={pts} fill="#FBBF24" />
+const wordmarkStyle = {
+  fontFamily: "'Barlow Condensed', 'Arial Narrow', Arial, sans-serif",
+  fontWeight: 700,
+  fontStyle: 'normal',
+  color: 'white',
+  fontSize: '0.26em',
+  letterSpacing: '0.18em',
+  marginTop: '0.4em',
+  textTransform: 'uppercase',
 }
