@@ -113,15 +113,6 @@ export default function Carousel() {
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="mt-12 flex flex-wrap gap-6">
-            {[['+15', 'años de experiencia'], ['500+', 'proyectos realizados'], ['24/7', 'urgencias'], ['100%', 'garantizados']].map(([v, l]) => (
-              <div key={l} className="rounded-xl border border-white/10 bg-white/5 backdrop-blur px-6 py-4 text-center min-w-[110px]">
-                <div className="text-2xl font-bold text-amber-400">{v}</div>
-                <div className="mt-0.5 text-xs text-slate-400">{l}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
 
