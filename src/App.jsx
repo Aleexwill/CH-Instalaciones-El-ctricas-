@@ -3,7 +3,6 @@ import { onAuthStateChanged, signOut } from 'firebase/auth'
 import { auth } from './firebase'
 import Navbar from './components/Navbar'
 import Carousel from './components/Carousel'
-import Services from './components/Services'
 import SolucionesHogar from './components/SolucionesHogar'
 import About from './components/About'
 import Projects from './components/Projects'
@@ -77,7 +76,6 @@ function App() {
     <div className="min-h-screen bg-white">
       <Navbar />
       <Carousel />
-      <Services />
       <SolucionesHogar />
       <About />
       <Projects />
