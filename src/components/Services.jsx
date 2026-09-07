@@ -64,18 +64,18 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-px bg-slate-800 sm:grid-cols-2 lg:grid-cols-3 rounded-xl overflow-hidden border border-slate-800">
+        <div className="mt-12 grid gap-px bg-slate-800 sm:grid-cols-2 rounded-xl overflow-hidden border border-slate-800">
           {SERVICES.map((service) => (
             <div
               key={service.title}
-              className="bg-slate-900 p-7 flex flex-col gap-4 hover:bg-slate-800 transition-colors group"
+              className="bg-slate-900 p-10 flex flex-col gap-5 hover:bg-slate-800 transition-colors group min-h-[220px]"
             >
-              <div className="text-amber-400/70 group-hover:text-amber-400 transition-colors">
+              <div className="text-amber-400/70 group-hover:text-amber-400 transition-colors [&_svg]:h-14 [&_svg]:w-14">
                 {service.svg}
               </div>
               <div>
-                <h3 className="font-semibold text-white">{service.title}</h3>
-                <p className="mt-1.5 text-sm text-slate-400 leading-relaxed">{service.desc}</p>
+                <h3 className="text-lg font-bold text-white">{service.title}</h3>
+                <p className="mt-2 text-slate-400 leading-relaxed">{service.desc}</p>
               </div>
             </div>
           ))}
