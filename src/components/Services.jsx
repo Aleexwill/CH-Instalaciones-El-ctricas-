@@ -22,17 +22,6 @@ const SERVICES = [
     ),
   },
   {
-    title: 'Instalaciones industriales',
-    desc: 'Tableros de fuerza, media tensión y automatización para plantas industriales.',
-    svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <rect x="8" y="8" width="32" height="32" rx="2"/>
-        <path d="M16 24h6l3-8 4 16 3-8h6"/>
-        <path d="M8 18h4M8 30h4M36 18h4M36 30h4"/>
-      </svg>
-    ),
-  },
-  {
     title: 'Mantenimiento preventivo',
     desc: 'Revisiones periódicas para prevenir fallas y prolongar la vida útil de tu instalación.',
     svg: (
@@ -49,17 +38,6 @@ const SERVICES = [
         <circle cx="24" cy="24" r="18"/>
         <path d="M24 12v4M24 32v4M12 24h4M32 24h4"/>
         <path strokeWidth="2" d="M27 18l-6 8h6l-6 8"/>
-      </svg>
-    ),
-  },
-  {
-    title: 'Certificaciones y normativa',
-    desc: 'Inspecciones y certificados que aseguran el cumplimiento de la normativa vigente.',
-    svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <path d="M14 6h20a2 2 0 012 2v32a2 2 0 01-2 2H14a2 2 0 01-2-2V8a2 2 0 012-2z"/>
-        <path d="M18 16h12M18 22h12M18 28h8"/>
-        <path strokeWidth="2" d="M30 32l2 2 4-4"/>
       </svg>
     ),
   },
