@@ -1,85 +1,50 @@
 const SERVICIOS = [
   {
     num: '1',
-    title: 'Instalación de soportes para TV',
-    svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <rect x="8" y="12" width="32" height="22" rx="2"/>
-        <path d="M16 34v4M32 34v4M12 38h24"/>
-        <path d="M4 16h4M40 16h4"/>
-      </svg>
-    ),
-  },
-  {
-    num: '2',
-    title: 'Colocación de cuadros y espejos',
-    svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <rect x="10" y="10" width="28" height="28" rx="2"/>
-        <path d="M18 20l4 8 4-5 3 5"/>
-        <circle cx="17" cy="17" r="2"/>
-        <path d="M24 8v4M24 36v4"/>
-      </svg>
-    ),
-  },
-  {
-    num: '3',
-    title: 'Instalación de repisas y estantes',
-    svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <path d="M8 20h32M8 32h32"/>
-        <path d="M14 20v12M34 20v12"/>
-        <path d="M18 12h12M20 12v8M28 12v8"/>
-        <rect x="19" y="32" width="4" height="6"/>
-        <rect x="25" y="32" width="4" height="6"/>
-      </svg>
-    ),
-  },
-  {
-    num: '4',
-    title: 'Instalación de barrales y accesorios para cortinas',
-    svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <path d="M6 14h36"/>
-        <circle cx="6" cy="14" r="2"/>
-        <circle cx="42" cy="14" r="2"/>
-        <path d="M12 14v20c0 1.5 2 2 2 0V16M20 14v18c0 2 2 2 2 0V16M28 14v20c0 2 2 2 2 0V16M36 14v18c0 2 2 2 2 0V16"/>
-      </svg>
-    ),
-  },
-  {
-    num: '5',
-    title: 'Instalación y cambio de luminarias',
-    svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <path d="M24 6v4"/>
-        <path d="M24 10c-5.5 0-9 4-9 8 0 3.5 2 6 5 7.5V30h8v-4.5c3-1.5 5-4 5-7.5 0-4-3.5-8-9-8z"/>
-        <path d="M20 30v2a2 2 0 004 0v-2"/>
-        <path d="M10 14l2.5 2.5M38 14l-2.5 2.5M6 24h4M38 24h4"/>
-      </svg>
-    ),
-  },
-  {
-    num: '6',
     title: 'Instalación de ventiladores de techo',
+    desc: 'Mejora la ventilación y el confort de tus espacios.',
     svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
         <circle cx="24" cy="22" r="3"/>
         <path d="M24 6v13"/>
         <path d="M24 22c-3-6-8-8-12-6 1 4 5 7 12 6z"/>
         <path d="M24 22c6-3 8-8 6-12-4 1-7 5-6 12z"/>
         <path d="M24 22c3 6 8 8 12 6-1-4-5-7-12-6z"/>
         <path d="M24 22c-6 3-8 8-6 12 4-1 7-5 6-12z"/>
-        <path d="M24 25v6"/>
-        <circle cx="24" cy="32" r="2"/>
+        <path d="M24 25v6"/><circle cx="24" cy="32" r="2"/>
       </svg>
     ),
   },
   {
-    num: '7',
-    title: 'Cambio y mejora de accesorios eléctricos',
+    num: '2',
+    title: 'Cambio e instalación de duchas',
+    desc: 'Instalación segura y eficiente para tu comodidad.',
     svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M10 10c0-4 3-6 6-6s6 2 6 6v18H10V10z"/>
+        <path d="M22 20h16v4H22"/>
+        <path d="M26 30v2M30 30v2M34 30v2M28 34v2M32 34v2"/>
+      </svg>
+    ),
+  },
+  {
+    num: '3',
+    title: 'Colocación de luminarias LED y reflectores',
+    desc: 'Ilumina tus espacios con seguridad y ahorro energético.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M24 6v4M24 10c-5.5 0-9 4-9 8 0 3.5 2 6 5 7.5V30h8v-4.5c3-1.5 5-4 5-7.5 0-4-3.5-8-9-8z"/>
+        <path d="M20 30v2a2 2 0 004 0v-2"/>
+        <path d="M10 14l2.5 2.5M38 14l-2.5 2.5M6 24h4M38 24h4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '4',
+    title: 'Cambio de tomacorrientes, interruptores y tapas',
+    desc: 'Renueva y mejora la seguridad de tus instalaciones.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
         <rect x="10" y="10" width="12" height="16" rx="1.5"/>
         <rect x="26" y="10" width="12" height="16" rx="1.5"/>
         <path d="M14 14v4M18 14v4"/>
@@ -89,23 +54,258 @@ const SERVICIOS = [
     ),
   },
   {
-    num: '8',
-    title: 'Fijación e instalación de accesorios para el hogar',
+    num: '5',
+    title: 'Instalación de alarmas básicas',
+    desc: 'Protege tu hogar o negocio con sistemas confiables y fáciles de usar.',
     svg: (
-      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-10 w-10">
-        <path d="M24 8l-14 10v20h28V18L24 8z"/>
-        <path d="M18 38V28h12v10"/>
-        <path d="M21 22h6M24 19v6"/>
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M24 6l-14 8v12c0 8 6 14 14 16 8-2 14-8 14-16V14L24 6z"/>
+        <path d="M18 24l4 4 8-8"/>
+      </svg>
+    ),
+  },
+  {
+    num: '6',
+    title: 'Instalación de nuevos tomacorrientes',
+    desc: 'Más puntos de conexión donde los necesitás, con seguridad y calidad.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="12" y="10" width="24" height="28" rx="3"/>
+        <path d="M19 20v6M29 20v6"/>
+        <circle cx="24" cy="30" r="2"/>
+      </svg>
+    ),
+  },
+  {
+    num: '7',
+    title: 'Cambio de llaves térmicas y disyuntores',
+    desc: 'Protege tu instalación eléctrica y evita sobrecargas.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="8" y="6" width="32" height="36" rx="2"/>
+        <path d="M16 14h16M16 20h16M16 26h10"/>
+        <path d="M34 28l-4 4 2 8 4-4-2-8z"/>
+      </svg>
+    ),
+  },
+  {
+    num: '8',
+    title: 'Reparación de cortocircuitos y fallas',
+    desc: 'Solucionamos fallas eléctricas de forma rápida y segura.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M28 6l-10 18h10L18 42"/>
+        <circle cx="24" cy="24" r="18" strokeDasharray="4 3"/>
+      </svg>
+    ),
+  },
+  {
+    num: '9',
+    title: 'Detección de fugas de corriente',
+    desc: 'Identificamos y corregimos fugas para proteger tu hogar o negocio.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M8 36c4-8 8-12 16-12s12 4 16 12"/>
+        <circle cx="24" cy="20" r="6"/>
+        <path d="M24 6v8M24 26v4M12 14l4 4M36 14l-4 4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '10',
+    title: 'Reparación de enchufes flojos o quemados',
+    desc: 'Reparación o cambio de enchufes dañados para tu seguridad.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M16 10h16l2 8H14l2-8z"/>
+        <rect x="12" y="18" width="24" height="20" rx="2"/>
+        <path d="M20 28v4M28 28v4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '11',
+    title: 'Reemplazo de focos y tubos LED',
+    desc: 'Mejora la iluminación y ahorra energía con tecnología LED.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M24 8c-6 0-10 4.5-10 9 0 4 2.5 7 6 8.5V30h8v-4.5c3.5-1.5 6-4.5 6-8.5 0-4.5-4-9-10-9z"/>
+        <path d="M20 30h8M21 34h6M22 38h4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '12',
+    title: 'Instalación de soportes para TV',
+    desc: 'Instalación segura y con ocultamiento de cables.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="8" y="12" width="32" height="22" rx="2"/>
+        <path d="M16 34v4M32 34v4M12 38h24"/>
+        <path d="M4 16h4M40 16h4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '13',
+    title: 'Organización y canalización de cables',
+    desc: 'Orden y seguridad para tus espacios con canaletas profesionales.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M6 16h36v8H6z"/>
+        <path d="M6 28h36v8H6z"/>
+        <path d="M14 16V10M24 16V10M34 16V10M14 36v6M24 36v6M34 36v6"/>
+      </svg>
+    ),
+  },
+  {
+    num: '14',
+    title: 'Instalación de timbres inalámbricos',
+    desc: 'Fácil instalación, sin cables y con gran alcance.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M16 12c2.5-3 6-5 8-5s5.5 2 8 5"/>
+        <path d="M20 17c1-1.5 2.5-2.5 4-2.5s3 1 4 2.5"/>
+        <rect x="18" y="20" width="12" height="14" rx="3"/>
+        <circle cx="24" cy="27" r="2"/>
+        <path d="M20 38c0 2 1.8 4 4 4s4-2 4-4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '15',
+    title: 'Colocación de luces de emergencia',
+    desc: 'Iluminación confiable cuando más la necesitás.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="10" y="18" width="28" height="16" rx="2"/>
+        <circle cx="18" cy="26" r="4"/>
+        <circle cx="30" cy="26" r="4"/>
+        <path d="M14 26l-6-4M34 26l6-4"/>
+        <path d="M18 14v4M30 14v4"/>
+        <path d="M22 10h4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '16',
+    title: 'Instalación de UPS y protectores de tensión',
+    desc: 'Protege tus equipos electrónicos de variaciones de voltaje.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="10" y="14" width="28" height="22" rx="2"/>
+        <path d="M18 20v8M24 18v12M30 20v8"/>
+        <path d="M10 30h28"/>
+        <path d="M16 36v4M32 36v4M20 40h8"/>
+      </svg>
+    ),
+  },
+  {
+    num: '17',
+    title: 'Cambio de tableros pequeños',
+    desc: 'Renovamos tu tablero eléctrico con seguridad y normas vigentes.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="8" y="6" width="32" height="36" rx="2"/>
+        <path d="M8 16h32"/>
+        <rect x="14" y="20" width="8" height="10" rx="1"/>
+        <rect x="26" y="20" width="8" height="10" rx="1"/>
+        <circle cx="18" cy="34" r="2"/>
+        <circle cx="30" cy="34" r="2"/>
+      </svg>
+    ),
+  },
+  {
+    num: '18',
+    title: 'Puesta a tierra de equipos y viviendas',
+    desc: 'Protege a las personas y equipos de descargas eléctricas.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M24 6v22"/>
+        <path d="M12 28h24M16 34h16M20 40h8"/>
+      </svg>
+    ),
+  },
+  {
+    num: '19',
+    title: 'Instalación de reflectores para patios y jardines',
+    desc: 'Más seguridad y visibilidad para tus espacios exteriores.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M10 30l8-14h12l8 14H10z"/>
+        <path d="M18 30v8h12v-8"/>
+        <path d="M24 16V8M10 30l-6 2M38 30l6 2"/>
+        <path d="M20 34h8"/>
+      </svg>
+    ),
+  },
+  {
+    num: '20',
+    title: 'Instalación de repetidores Wi-Fi y cableado de red',
+    desc: 'Mejora tu conexión a internet en todo tu hogar o negocio.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M8 20c4.5-5.5 10-8 16-8s11.5 2.5 16 8"/>
+        <path d="M14 26c2.8-3.5 6-5 10-5s7.2 1.5 10 5"/>
+        <path d="M20 32c1.5-2 2.5-3 4-3s2.5 1 4 3"/>
+        <circle cx="24" cy="38" r="2.5"/>
+      </svg>
+    ),
+  },
+  {
+    num: '21',
+    title: 'Instalación de cámaras IP y configuración',
+    desc: 'Vigila tu hogar o negocio desde donde estés.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="6" y="16" width="26" height="18" rx="3"/>
+        <path d="M32 21l8-5v16l-8-5V21z"/>
+        <circle cx="18" cy="25" r="4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '22',
+    title: 'Mantenimiento preventivo de instalaciones',
+    desc: 'Previene fallas y alarga la vida útil de tu instalación.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M36 12c0 0-2-4-8-4s-10 4-10 10c0 4 2 7 5 9L10 40l4 4 13-13c2 1 4 1.5 6 1.5 6.5 0 10-4.5 10-10 0-4-2.5-7.5-4-8l-4 5-4-3 5-4.5z"/>
+      </svg>
+    ),
+  },
+  {
+    num: '23',
+    title: 'Inspección eléctrica con informe',
+    desc: 'Diagnóstico completo y recomendaciones profesionales para viviendas y comercios.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <path d="M14 6h20a2 2 0 012 2v32a2 2 0 01-2 2H14a2 2 0 01-2-2V8a2 2 0 012-2z"/>
+        <path d="M18 16h12M18 22h12M18 28h8"/>
+        <path strokeWidth="2" d="M28 32l2 2 4-4"/>
+      </svg>
+    ),
+  },
+  {
+    num: '24',
+    title: 'Tomas eléctricas para portones o bombas de agua',
+    desc: 'Conexiones seguras y resistentes para tus equipos.',
+    svg: (
+      <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.5" className="h-9 w-9">
+        <rect x="14" y="10" width="20" height="28" rx="2"/>
+        <path d="M20 20v8M28 20v8"/>
+        <circle cx="24" cy="32" r="2"/>
+        <path d="M24 6v4M24 38v4M10 24H6M42 24h-4"/>
       </svg>
     ),
   },
 ]
 
 const GARANTIAS = [
-  { icon: ShieldIcon, text: 'Trabajo seguro y profesional' },
-  { icon: ClockIcon,  text: 'Rápido, limpio y ordenado' },
-  { icon: StarIcon,   text: 'Responsabilidad y confianza' },
-  { icon: CheckIcon,  text: 'Atención puntual' },
+  { icon: ShieldIcon, text: 'Calidad garantizada' },
+  { icon: ClockIcon,  text: 'Trabajo seguro' },
+  { icon: StarIcon,   text: 'Responsabilidad' },
+  { icon: CheckIcon,  text: 'Servicio confiable' },
 ]
 
 export default function SolucionesHogar() {
@@ -116,29 +316,29 @@ export default function SolucionesHogar() {
         {/* Header */}
         <div className="mb-12 text-center">
           <span className="inline-block text-sm font-semibold uppercase tracking-widest text-amber-400 mb-3">
-            Servicios para el hogar
+            ¿Qué podemos hacer por vos?
           </span>
           <h2
             className="font-display text-5xl md:text-6xl font-bold uppercase leading-none text-white"
             style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
           >
-            Soluciones{' '}
-            <span className="text-amber-400 italic">para el hogar</span>
+            Nuestros{' '}
+            <span className="text-amber-400 italic">servicios</span>
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-slate-400">
-            Esas pequeñas cosas pendientes en tu hogar…{' '}
-            <span className="text-amber-400 font-medium">nosotros las resolvemos.</span>
+            Desde pequeñas reparaciones hasta instalaciones completas.{' '}
+            <span className="text-amber-400 font-medium">Siempre con seguridad y profesionalismo.</span>
           </p>
         </div>
 
         {/* Grid de servicios */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-slate-800 rounded-xl overflow-hidden border border-slate-800">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-px bg-slate-800 rounded-xl overflow-hidden border border-slate-800">
           {SERVICIOS.map((s) => (
             <div
               key={s.num}
-              className="bg-slate-900 p-6 flex flex-col items-center text-center gap-3 hover:bg-slate-800 transition-colors group"
+              className="bg-slate-900 p-5 flex flex-col items-center text-center gap-2.5 hover:bg-slate-800 transition-colors group"
             >
-              <div className="relative">
+              <div className="relative mt-1">
                 <span
                   className="absolute -top-1 -left-1 flex h-5 w-5 items-center justify-center rounded-full bg-amber-400 text-slate-950 text-xs font-bold"
                   style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
@@ -149,9 +349,14 @@ export default function SolucionesHogar() {
                   {s.svg}
                 </div>
               </div>
-              <p className="text-xs font-semibold uppercase tracking-wide text-slate-300 leading-tight">
-                {s.title}
-              </p>
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-wide text-slate-200 leading-tight">
+                  {s.title}
+                </p>
+                <p className="mt-1 text-xs text-slate-500 leading-snug hidden sm:block">
+                  {s.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -173,12 +378,12 @@ export default function SolucionesHogar() {
           <div className="flex items-center gap-4">
             <WhatsAppIcon />
             <div>
-              <p className="text-sm text-slate-400">¿Tenés algo para hacer en tu casa?</p>
+              <p className="text-sm text-slate-400">¿Necesitás alguno de estos servicios?</p>
               <p
                 className="text-xl font-bold text-white uppercase"
                 style={{ fontFamily: "'Barlow Condensed', sans-serif" }}
               >
-                ¡Escribinos!
+                ¡Consultanos sin compromiso!
               </p>
             </div>
           </div>
