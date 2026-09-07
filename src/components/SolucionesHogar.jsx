@@ -183,7 +183,7 @@ export default function SolucionesHogar() {
             </div>
           </div>
           <a
-            href="https://wa.me/5930984480486"
+            href="https://wa.me/595984480486"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 rounded-lg bg-amber-400 px-6 py-3 font-bold text-slate-950 hover:bg-amber-300 transition-colors"
