@@ -4,6 +4,7 @@ import { auth } from './firebase'
 import Navbar from './components/Navbar'
 import Carousel from './components/Carousel'
 import Services from './components/Services'
+import Promos from './components/Promos'
 import SolucionesHogar from './components/SolucionesHogar'
 import About from './components/About'
 import Projects from './components/Projects'
@@ -78,6 +79,7 @@ function App() {
       <Navbar />
       <Carousel />
       <Services />
+      <Promos />
       <SolucionesHogar />
       <About />
       <Projects />
